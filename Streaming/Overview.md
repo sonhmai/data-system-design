@@ -37,6 +37,10 @@ What to monitor for the services below?
 - Pinot
 - Clickhouse
 
+## Managing Flink State
+- Streaming joins
+- Support arbitrarily late-arriving updates for any side of a join
+
 ## References
 - https://www.uber.com/en-VN/blog/real-time-exactly-once-ad-event-processing/
 - https://www.slideshare.net/FlinkForward/exactlyonce-financial-data-processing-at-scale-with-flink-and-pinot
