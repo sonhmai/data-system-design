@@ -1,3 +1,4 @@
+Streaming Semantics
 
 processing and delivery guarantees
 
@@ -31,6 +32,14 @@ E2E EO requires
 - transactional sink
 - or idempotent writes
 
-# References 
+## Exactly Once
+- Duplicates can not be avoided at producer side
+- Storing deduplication ID in Flink state for deduplication (transaction ID, UUID,...)
+- Use Flink Exactly-Once Two-Phase Commit
+
+Pitfalls
+- False sense of security. Data can still be loss before the exactly-once processing pipeline.
+
+# References
 
 - Video, [Streaming Concepts & Introduction to Flink](https://www.youtube.com/watch?v=9pRsewtSPkQ)
