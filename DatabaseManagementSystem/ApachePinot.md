@@ -1,4 +1,10 @@
+# Apache Pinot
 
+- A distributed, columnar OLAP data store. 
+- When? user-facing, low latency analytics, data freshness in seconds to minutes, 
+high concurrency queries due to serving user-facing applications 
+(ecommerce seller/ sites analysis, social networks analytics for user 
+e.g. who's seen your profile in LinkedIn)
 
 ## Upsert
 
