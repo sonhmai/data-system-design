@@ -1,13 +1,28 @@
-# Data Systems Design
+# Data Systems Design and Implementation
 
-System Design, Solution Architecture, Data Systems Notes
+Data System Design notes. Wide-range topics
+- Data Lake
+- Data Governance
+- LakeHouse
+- Streaming Data System
+- Data Engineering, Data Ops for Machine Learning
 
-Structure- still finding a good structure
+Structure - still finding a good structure
 ```
-Things in root folder -> generic, service-agnostic, cloud-agnostic info
-Things in sub-folder -> more specific
+Cloud-specific: info, design considerations, pros and cons of cloud-specific services
+The Rest: generic design info and notes, self-explained
 ```
 
-# Demos
+## Basics
+
+- What is ACID?
+    - Atomicity: A transaction should either complete successfully or just fail. There should not be any partial success.
+    - Consistency: A transaction will bring the database from one valid state to another state.
+    - Isolation: Every transaction should be independent of each other i.e., one transaction should not affect another.
+    - Durability: If a transaction is completed, it should be preserved in the database even if the machine state is lost or a system failure might occur.
+
+- Why need ACID on the data lake?
+
+## Demos
 
 TODO
