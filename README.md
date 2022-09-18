@@ -26,3 +26,9 @@ The Rest: generic design info and notes, self-explained
 ## Demos
 
 TODO
+
+## References
+- System Design Resources
+  - https://github.com/karanpratapsingh/system-design
+  - https://github.com/donnemartin/system-design-primer
+  - https://gist.github.com/vasanthk/485d1c25737e8e72759f 
