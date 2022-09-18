@@ -53,7 +53,29 @@ They communicate with each other to exchange data between subsequent Tasks.
 Lowering latency increases throughput. If a system can perform operations faster,
 it can perform more operations per time unit.
 
+### Data Types and Serialization
+Flink places some restrictions on the type of elements that can be in a DataStream. 
+The reason for this is that the system analyzes the types to determine efficient execution strategies.
+
+7 data types
+1. Java Tuples and Scala Case Classes
+2. Java POJOs
+3. Primitive Types
+4. Regular Classes
+5. Values
+6. Hadoop Writables
+7. Special Types
+
+What is Type Descriptor?
+
+Generic Type Extraction?
+
 ### Stateful operators and applications
+
+What to use? 
+- KeyedProcessFunction
+- ProcessFunction
+- ...
 
 **Watermark**
 - used to derive current event-time at each task in an event-time application.
