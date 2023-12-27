@@ -1,34 +1,44 @@
 # Data Systems Design and Implementation
 
-Data System Design notes. Wide-range topics
-- Data Lake
-- Data Governance
-- LakeHouse
-- Streaming Data System
-- Data Engineering, Data Ops for Machine Learning
+Data System Design collection of notes and readings, blog posts.
 
-Structure - still finding a good structure
-```
-Cloud-specific: info, design considerations, pros and cons of cloud-specific services
-The Rest: generic design info and notes, self-explained
-```
+## Integration
 
-## Basics
+Blogs
+- [How Agoda manages 1.8 trillion Events per day on Kafka](https://medium.com/agoda-engineering/how-agoda-manages-1-8-trillion-events-per-day-on-kafka-1d6c3f4a7ad1)
 
-- What is ACID?
-    - Atomicity: A transaction should either complete successfully or just fail. There should not be any partial success.
-    - Consistency: A transaction will bring the database from one valid state to another state.
-    - Isolation: Every transaction should be independent of each other i.e., one transaction should not affect another.
-    - Durability: If a transaction is completed, it should be preserved in the database even if the machine state is lost or a system failure might occur.
 
-- Why need ACID on the data lake?
+## Data Consumption
 
-## Demos
+Blogs
+- [Traveloka - Data Lake API on Microservice Architecture using BigQuery](https://medium.com/traveloka-engineering/data-lake-api-on-microservice-architecture-using-bigquery-10d6e9c5ca8f)
 
-TODO
+Best Practices
+- avoid giving direct access to data platform storage (object storage, database, etc.) as
+it creates a tight coupling to the underlying technology, format, etc. Instead, have an API
+layer in between to decouple that dependency. What's bad about direct access?
+  - change coordination required between teams.
+  - lack of access control (column, row levels).
+  - lack of audit log (who access, download what).
 
-## References
-- System Design Resources
+
+## Data Quality
+
+Blogs
+- [How Google, Uber, and Amazon Ensure High-Quality Data at Scale](https://medium.com/swlh/how-3-of-the-top-tech-companies-approach-data-quality-79c3146fd959)
+
+Papers
+- [VLDB, Amazone - Automating Large-Scale Data Quality Verification](https://www.vldb.org/pvldb/vol11/p1781-schelter.pdf). It presents the design choices and architecture of a production-grade system for checking data quality at scale, shows the evaluation result on some datasets.
+- [Uber - Monitoring Data Quality at Scale with Statistical Modeling](https://www.uber.com/en-VN/blog/monitoring-data-quality-at-scale)
+
+Best Practices
+- too little data quality alerts let important issues go unresolved.
+- too many alerts overwhelm owners and cause them to not fix the most important ones.
+- statistical modeling techniques (PCA, etc.) can be used to reduce computation need.
+- separate anomaly detection from anomaly scoring and alerting strategy.
+
+
+## System Design Resources
   - https://github.com/karanpratapsingh/system-design
   - https://github.com/donnemartin/system-design-primer
   - https://gist.github.com/vasanthk/485d1c25737e8e72759f 
