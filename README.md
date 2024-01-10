@@ -33,6 +33,7 @@ monitoring-data-quality-at-scale)
 Papers
 - [VLDB, Amazon - Automating Large-Scale Data Quality Verification](https://www.vldb.org/pvldb/vol11/p1781-schelter.pdf). It presents the design choices and architecture of a production-grade system for checking data quality at scale, shows the evaluation result on some datasets.
 
+
 Best Practices
 - too little data quality alerts let important issues go unresolved.
 - too many alerts overwhelm owners and cause them to not fix the most important ones.
