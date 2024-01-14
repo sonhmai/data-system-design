@@ -1,5 +1,4 @@
-
-## Databricks
+# Spark Code Snippets
 
 Spark Structured Streaming
 
