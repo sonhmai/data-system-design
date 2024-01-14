@@ -2,12 +2,6 @@
 
 Data System Design collection of notes and readings, blog posts.
 
-## Integration
-
-Blogs
-- [How Agoda manages 1.8 trillion Events per day on Kafka](https://medium.com/agoda-engineering/how-agoda-manages-1-8-trillion-events-per-day-on-kafka-1d6c3f4a7ad1)
-
-
 ## Data Consumption
 
 Blogs
@@ -52,6 +46,16 @@ Definition
   - distribution
   - exceptional values
   - etc.
+
+
+## Integration
+
+Blogs
+- [How Agoda manages 1.8 trillion Events per day on Kafka](https://medium.com/agoda-engineering/how-agoda-manages-1-8-trillion-events-per-day-on-kafka-1d6c3f4a7ad1)
+
+
+## Distributed Systems
+- [Patterns of Distributed Systems. Unmesh Joshi](https://www.amazon.com/Patterns-Distributed-Systems-Addison-Wesley-Signature/dp/0138221987)
 
 
 ## System Design Resources
