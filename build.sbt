@@ -6,7 +6,7 @@ lazy val examples = (project in file("modules/examples"))
   )
 
 lazy val root = (project in file("."))
-  .settings(name := "jvm-examples")
+  .settings(name := "data-system-design")
   .aggregate(
     examples
   )
