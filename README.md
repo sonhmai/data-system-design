@@ -6,14 +6,23 @@ Data System Design collection of notes and readings, blog posts.
 
 Blogs
 - [Traveloka - Data Lake API on Microservice Architecture using BigQuery](https://medium.com/traveloka-engineering/data-lake-api-on-microservice-architecture-using-bigquery-10d6e9c5ca8f)
+  Best Practices: avoid giving direct access to data platform storage (object storage, database, etc.) as
+  it creates a tight coupling to the underlying technology, format, etc. Instead, have an API
+  layer in between to decouple that dependency. What's bad about direct access?
+    - change coordination required between teams.
+    - lack of access control (column, row levels).
+    - lack of audit log (who access, download what).
 
-Best Practices
-- avoid giving direct access to data platform storage (object storage, database, etc.) as
-it creates a tight coupling to the underlying technology, format, etc. Instead, have an API
-layer in between to decouple that dependency. What's bad about direct access?
-  - change coordination required between teams.
-  - lack of access control (column, row levels).
-  - lack of audit log (who access, download what).
+
+## Data Processing
+- [Agoda, How to Design and Maintain a High-Performing Data Pipeline](https://medium.com/agoda-engineering/how-to-design-maintain-a-high-performing-data-pipeline-63b1603b8e4a) 
+  Data pipeline scalability: SLA, partioning, data freshness, resource usage, scheduling, data dependency, monitoring.
+  Data quality: freshness, integrity (uniqueness e.g. no dup keys), completeness (e.g. no empty, NULLS), 
+    accuracy (value is not abnormal by checking with previous trend, ThridEye), 
+    consistency (source = destination, Quilliup, running when pipeline completes).
+  Ensuring data quality: validating before writing to destination, testing, monitoring, alerting, responding,
+    automatic Jira tickets creation.
+- [Idempotency Keys: How PayPal and Stripe Prevent Duplicate Payment](https://medium.com/@sahintalha1/the-way-psps-such-as-paypal-stripe-and-adyen-prevent-duplicate-payment-idempotency-keys-615845c185bf)
 
 
 ## Data Quality
@@ -23,6 +32,7 @@ Blogs
 - [Uber - Monitoring Data Quality at Scale with Statistical Modeling](https://www.uber.com/en-VN/blog/
 monitoring-data-quality-at-scale)
 - [LinkedIn - Towards data quality management at LinkedIn](https://engineering.linkedin.com/blog/2022/towards-data-quality-management-at-linkedin)
+- [Data Quality: Timeseries Anomaly Detection at Scale with Thirdeye](https://medium.com/the-ab-tasty-tech-blog/data-quality-timeseries-anomaly-detection-at-scale-with-thirdeye-468f771154e6)
 
 Papers
 - [VLDB, Amazon - Automating Large-Scale Data Quality Verification](https://www.vldb.org/pvldb/vol11/p1781-schelter.pdf). It presents the design choices and architecture of a production-grade system for checking data quality at scale, shows the evaluation result on some datasets.
@@ -58,11 +68,24 @@ Blogs
 - [Patterns of Distributed Systems. Unmesh Joshi](https://www.amazon.com/Patterns-Distributed-Systems-Addison-Wesley-Signature/dp/0138221987)
 
 
+## Machine Learning Platform
+- [Featureflow: Democratizing ML for Agoda](https://medium.com/agoda-engineering/featureflow-democratizing-ml-for-agoda-aec7a6c45b30)
+Challenge: time-consuming feature analysis, training, validation vs fast changing customers and competitors in travel industry;
+  lacking of consistency from analysis to training, from feature development to deployment.
+Solution: Featureflow with components (UI, data pipeline, monitoring, sandbox env, experiment platform)
+Result: feature analysis reduced from a week to a day, quarterly experiments increased from 6 to 20, 
+  feature contributors from ~3 to ~50, larger feature pool, more robust feature screening process.
+
+
 ## System Design Resources
   - https://github.com/karanpratapsingh/system-design
   - https://github.com/donnemartin/system-design-primer
   - https://gist.github.com/vasanthk/485d1c25737e8e72759f 
 
+
+## Interview Guides
+- [Preparing for Interview at Agoda](https://medium.com/agoda-engineering/preparing-for-interview-at-agoda-2c07b7d13ca5): 
+Clear guide for the interview process at Agoda with advices for candidates in each stage.
 
 ## Databricks
 
