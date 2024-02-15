@@ -16,11 +16,11 @@ Blogs
 
 ## Data Processing
 - [Agoda, How to Design and Maintain a High-Performing Data Pipeline](https://medium.com/agoda-engineering/how-to-design-maintain-a-high-performing-data-pipeline-63b1603b8e4a) 
-  Data pipeline scalability: SLA, partioning, data freshness, resource usage, scheduling, data dependency, monitoring.
-  Data quality: freshness, integrity (uniqueness e.g. no dup keys), completeness (e.g. no empty, NULLS), 
+  - Data pipeline scalability: SLA, partioning, data freshness, resource usage, scheduling, data dependency, monitoring.
+  - Data quality: freshness, integrity (uniqueness e.g. no dup keys), completeness (e.g. no empty, NULLS), 
     accuracy (value is not abnormal by checking with previous trend, ThridEye), 
     consistency (source = destination, Quilliup, running when pipeline completes).
-  Ensuring data quality: validating before writing to destination, testing, monitoring, alerting, responding,
+  - Ensuring data quality: validating before writing to destination, testing, monitoring, alerting, responding,
     automatic Jira tickets creation.
 - [Idempotency Keys: How PayPal and Stripe Prevent Duplicate Payment](https://medium.com/@sahintalha1/the-way-psps-such-as-paypal-stripe-and-adyen-prevent-duplicate-payment-idempotency-keys-615845c185bf)
 
@@ -29,8 +29,7 @@ Blogs
 
 Blogs
 - [How Google, Uber, and Amazon Ensure High-Quality Data at Scale](https://medium.com/swlh/how-3-of-the-top-tech-companies-approach-data-quality-79c3146fd959)
-- [Uber - Monitoring Data Quality at Scale with Statistical Modeling](https://www.uber.com/en-VN/blog/
-monitoring-data-quality-at-scale)
+- [Uber - Monitoring Data Quality at Scale with Statistical Modeling](https://www.uber.com/en-VN/blog/monitoring-data-quality-at-scale)
 - [LinkedIn - Towards data quality management at LinkedIn](https://engineering.linkedin.com/blog/2022/towards-data-quality-management-at-linkedin)
 - [Data Quality: Timeseries Anomaly Detection at Scale with Thirdeye](https://medium.com/the-ab-tasty-tech-blog/data-quality-timeseries-anomaly-detection-at-scale-with-thirdeye-468f771154e6)
 
@@ -70,10 +69,10 @@ Blogs
 
 ## Machine Learning Platform
 - [Featureflow: Democratizing ML for Agoda](https://medium.com/agoda-engineering/featureflow-democratizing-ml-for-agoda-aec7a6c45b30)
-Challenge: time-consuming feature analysis, training, validation vs fast changing customers and competitors in travel industry;
+  - Challenge: time-consuming feature analysis, training, validation vs fast changing customers and competitors in travel industry;
   lacking of consistency from analysis to training, from feature development to deployment.
-Solution: Featureflow with components (UI, data pipeline, monitoring, sandbox env, experiment platform)
-Result: feature analysis reduced from a week to a day, quarterly experiments increased from 6 to 20, 
+  - Solution: Featureflow with components (UI, data pipeline, monitoring, sandbox env, experiment platform)
+  - Result: feature analysis reduced from a week to a day, quarterly experiments increased from 6 to 20, 
   feature contributors from ~3 to ~50, larger feature pool, more robust feature screening process.
 
 
