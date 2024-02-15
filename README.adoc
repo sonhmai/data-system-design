@@ -9,7 +9,7 @@
 :toclevels: 6
 :toc-title:
 
-Collection of notes readings, blog posts related to data systems design
+Collection of useful notes, readings, videos, codes related to data systems design
 
 toc::[]
 
@@ -79,8 +79,12 @@ Common Issues
 
 
 === Data Lineage
+Blogs
 
-=== Data Security and Compliance
+* Data Lineage at Slack (https://slack.engineering/data-lineage-at-slack/)
+
+
+=== Data Security, Compliance
 
 
 == Data Integration
