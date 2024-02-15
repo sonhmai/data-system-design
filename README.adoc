@@ -13,6 +13,8 @@ Collection of useful notes, readings, videos, codes related to data systems desi
 
 toc::[]
 
+== Data Architecture
+
 
 == Data Storage
 Terms
@@ -38,6 +40,8 @@ Blogs
 
 
 == Data Processing
+Blogs
+
 * [Agoda, How to Design and Maintain a High-Performing Data Pipeline](https://medium.com/agoda-engineering/how-to-design-maintain-a-high-performing-data-pipeline-63b1603b8e4a) 
   ** Data pipeline scalability: SLA, partioning, data freshness, resource usage, scheduling, data dependency, monitoring.
   ** Data quality: freshness, integrity (uniqueness e.g. no dup keys), completeness (e.g. no empty, NULLS),
@@ -46,6 +50,13 @@ Blogs
   ** Ensuring data quality: validating before writing to destination, testing, monitoring, alerting, responding,
     automatic Jira tickets creation.
 * [Idempotency Keys: How PayPal and Stripe Prevent Duplicate Payment](https://medium.com/@sahintalha1/the-way-psps-such-as-paypal-stripe-and-adyen-prevent-duplicate-payment-idempotency-keys-615845c185bf)
+
+
+Papers
+
+* Apache Arrow DataFusion: A Fast, Embeddable, Modular Analytic Query Engine (https://github.com/apache/arrow-datafusion/issues/6782).
+  Written in Rust, uses Apache Arrow as memory model.
+
 
 == Data Governance
 Metadata management, data quality, data veracity, data security, data lineage, etc.
@@ -88,24 +99,43 @@ Blogs
 * OpenLineage, open framework for data lineage collection and analysis (https://openlineage.io/)
 
 
-
 === Data Security, Compliance
+GDPR, CCPA, PII Protection, etc.
 
+* Lyft - A Federated Approach To Providing User Privacy Rights
+ (https://eng.lyft.com/a-federated-approach-to-providing-user-privacy-rights-3d9ab73441d9).
+  Technical strategies for CCPA. Implementation of user data export and deletion.
+  Federated design with central orchestration for exporting/ deleting.
 
 == Data Integration
 
 Blogs
 
 * How Agoda manages 1.8 trillion Events per day on Kafka (https://medium.com/agoda-engineering/how-agoda-manages-1-8-trillion-events-per-day-on-kafka-1d6c3f4a7ad1)
+* Apache Kafka Rebalance Protocol, or the magic behind your streams applications  (https://medium.com/streamthoughts/apache-kafka-rebalance-protocol-or-the-magic-behind-your-streams-applications-e94baf68e4f2)
 
 
-== Machine Learning Platform
+== Machine Learning
 * Featureflow: Democratizing ML for Agoda (https://medium.com/agoda-engineering/featureflow-democratizing-ml-for-agoda-aec7a6c45b30)
   - Challenge: time-consuming feature analysis, training, validation vs fast changing customers and competitors in travel industry;
   lacking of consistency from analysis to training, from feature development to deployment.
   - Solution: Featureflow with components (UI, data pipeline, monitoring, sandbox env, experiment platform)
   - Result: feature analysis reduced from a week to a day, quarterly experiments increased from 6 to 20, 
   feature contributors from ~3 to ~50, larger feature pool, more robust feature screening process.
+
+== Platform and Infra
+
+Kubernetes
+
+
+Terraform
+
+
+Network
+
+
+== Operations
+
 
 
 == System Design Resources
@@ -126,7 +156,8 @@ Clear guide for the interview process at Agoda with advices for candidates in ea
 
 == Databricks
 
-=== Delta Lake
+Delta Lake
+
 * [Managing Recalls with Barcode Traceability on the Delta Lake](https://www.databricks.com/blog/managing-recalls-barcode-traceability-delta-lake)
 * [Creating a Spark Streaming ETL pipeline with Delta Lake at Gousto](https://medium.com/gousto-engineering-techbrunch/creating-a-spark-streaming-etl-pipeline-with-delta-lake-at-gousto-6fcbce36eba6)
   - issues and solutions
@@ -145,8 +176,15 @@ Clear guide for the interview process at Agoda with advices for candidates in ea
   - Other topics: DBT for data modeling, Redshift, SSOT.
 * [Data Modeling Best Practices & Implementation on a Modern Lakehouse](https://www.databricks.com/blog/data-modeling-best-practices-implementation-modern-lakehouse)
 
+Governance
 
-=== Backfilling
+* Implementing the GDPR 'Right to be Forgotten' in Delta Lake (https://www.databricks.com/blog/2022/03/23/implementing-the-gdpr-right-to-be-forgotten-in-delta-lake.html)
+  Approaches: 1-Data Amnesia, 2-Anonymization, 3-Pseudonymization/Normalized tables.
+  Speed up point DELETE by data skipping optimization with Z-order on DELETE where fields.
+
+
+Backfilling
+
 * https://docs.databricks.com/en/ingestion/auto-loader/production.html=trigger-regular-backfills-using-cloudfilesbackfillinterval
 * https://community.databricks.com/t5/data-engineering/how-to-make-structured-streaming-with-autoloader-efficiently-and/td-p/47833
 * Autoloader start and end date for ingestion (https://community.databricks.com/t5/data-engineering/autoloader-start-and-end-date-for-ingestion/td-p/45523)
