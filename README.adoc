@@ -81,7 +81,12 @@ Common Issues
 === Data Lineage
 Blogs
 
-* Data Lineage at Slack (https://slack.engineering/data-lineage-at-slack/)
+* Data Lineage at Slack (https://slack.engineering/data-lineage-at-slack/).
+  ** Lineage service exposes endpoints for ingestion, stores data in RDS.
+  ** Ingestion for Airflow DAGs built into existing dags using Airflow callbacks.
+  ** Ingestion for Presto dashboards: audit tables, SQL Parsing.
+* OpenLineage, open framework for data lineage collection and analysis (https://openlineage.io/)
+
 
 
 === Data Security, Compliance
