@@ -37,7 +37,13 @@ Blogs
     change coordination required between teams.
     lack of access control (column, row levels).
     lack of audit log (who access, download what).
-
+* Building Criteo API, What We’ve Learned
+ (https://medium.com/criteo-engineering/building-criteo-api-what-weve-learned-b7f3e7b8d270). Key lessons learned after building a new API ecosystem from scratch.
+* Idempotency Keys: How PayPal and Stripe Prevent Duplicate Payment(https://medium.com/@sahintalha1/the-way-psps-such-as-paypal-stripe-and-adyen-prevent-duplicate-payment-idempotency-keys-615845c185bf)
+* How We Design Our APIs at Slack
+ (https://slack.engineering/how-we-design-our-apis-at-slack/)
+* Grafana - How I write HTTP services in Go after 13 years
+ (https://grafana.com/blog/2024/02/09/how-i-write-http-services-in-go-after-13-years/)
 
 == Data Processing
 Blogs
@@ -49,7 +55,8 @@ Blogs
     consistency (source = destination, Quilliup, running when pipeline completes).
   ** Ensuring data quality: validating before writing to destination, testing, monitoring, alerting, responding,
     automatic Jira tickets creation.
-* [Idempotency Keys: How PayPal and Stripe Prevent Duplicate Payment](https://medium.com/@sahintalha1/the-way-psps-such-as-paypal-stripe-and-adyen-prevent-duplicate-payment-idempotency-keys-615845c185bf)
+* Scheduling Data Pipelines at Criteo — Part 1
+ (https://medium.com/criteo-engineering/scheduling-data-pipelines-at-criteo-part-1-8b257c6c8e55)
 
 
 Papers
@@ -69,6 +76,12 @@ Blogs
 * [Uber - Monitoring Data Quality at Scale with Statistical Modeling](https://www.uber.com/en-VN/blog/monitoring-data-quality-at-scale)
 * [LinkedIn - Towards data quality management at LinkedIn](https://engineering.linkedin.com/blog/2022/towards-data-quality-management-at-linkedin)
 * [Data Quality: Timeseries Anomaly Detection at Scale with Thirdeye](https://medium.com/the-ab-tasty-tech-blog/data-quality-timeseries-anomaly-detection-at-scale-with-thirdeye-468f771154e6)
+* How we deal with Data Quality using Circuit Breakers
+ (https://medium.com/@modern-cdo/taming-data-quality-with-circuit-breakers-dbe550d3ca78)
+* Lyft - From Big Data to Better Data: Ensuring Data Quality with Verity
+ (https://eng.lyft.com/from-big-data-to-better-data-ensuring-data-quality-with-verity-a996b49343f6)
+* Data Quality Automation at Twitter
+ (https://blog.x.com/engineering/en_us/topics/infrastructure/2022/data-quality-automation-at-twitter)
 
 Papers
 
@@ -97,6 +110,10 @@ Blogs
   ** Ingestion for Airflow DAGs built into existing dags using Airflow callbacks.
   ** Ingestion for Presto dashboards: audit tables, SQL Parsing.
 * OpenLineage, open framework for data lineage collection and analysis (https://openlineage.io/)
+* How we compute data lineage at Criteo (https://medium.com/criteo-engineering/how-we-compute-data-lineage-at-criteo-b3f09fc5c577)
+* Yelp - Spark Data Lineage (https://engineeringblog.yelp.com/2022/08/spark-data-lineage.html)
+* Data Lineage: State-of-the-art and Implementation Challenges
+ (https://medium.com/bliblidotcom-techblog/data-lineage-state-of-the-art-and-implementation-challenges-1ea8dccde9de)
 
 
 === Data Security, Compliance
@@ -106,6 +123,9 @@ GDPR, CCPA, PII Protection, etc.
  (https://eng.lyft.com/a-federated-approach-to-providing-user-privacy-rights-3d9ab73441d9).
   Technical strategies for CCPA. Implementation of user data export and deletion.
   Federated design with central orchestration for exporting/ deleting.
+* Intuit - 10 lessons learned in operationalizing GDPR at scale
+ (https://medium.com/ssdr-book/10-lessons-learned-in-operationalizing-gdpr-at-scale-7a41318846b6)
+
 
 == Data Integration
 
@@ -122,21 +142,45 @@ Blogs
   - Solution: Featureflow with components (UI, data pipeline, monitoring, sandbox env, experiment platform)
   - Result: feature analysis reduced from a week to a day, quarterly experiments increased from 6 to 20, 
   feature contributors from ~3 to ~50, larger feature pool, more robust feature screening process.
+* How ByteDance Scales Offline Inference with multi-modal LLMs to 200 TB Data
+ (https://www.anyscale.com/blog/how-bytedance-scales-offline-inference-with-multi-modal-llms-to-200TB-data)
+* Building Real-time Machine Learning Foundations at Lyft
+ (https://eng.lyft.com/building-real-time-machine-learning-foundations-at-lyft-6dd99b385a4e)
 
 == Platform and Infra
 
 Kubernetes
 
+* Lessons From Our 8 Years Of Kubernetes In Production (https://medium.com/@.anders/learnings-from-our-8-years-of-kubernetes-in-production-two-major-cluster-crashes-ditching-self-0257c09d36cd)
+
 
 Terraform
 
+* Slack - How We Use Terraform At Slack
+ (https://slack.engineering/how-we-use-terraform-at-slack/)
 
 Network
+
+* Slack - Traffic 101: Packets Mostly Flow
+ (https://slack.engineering/traffic-101-packets-mostly-flow/)
+
+== Testing
+
+* Slack - Continuous Load Testing
+ (https://slack.engineering/continuous-load-testing/)
 
 
 == Operations
 
+Observability, Monitoring
 
+* Observability @ Data Pipelines
+ (https://medium.com/ssdr-book/observability-data-pipelines-99eda62b1704)
+
+Incidents
+
+* Slack’s Incident on 2022-Feb-22
+(https://slack.engineering/slacks-incident-on-2-22-22/)
 
 == System Design Resources
 Learning Resources Repo
@@ -150,11 +194,26 @@ Books
 * [Patterns of Distributed Systems. Unmesh Joshi](https://www.amazon.com/Patterns-Distributed-Systems-Addison-Wesley-Signature/dp/0138221987)
 
 
+Blogs
+- Building a Control Plane for Lyft’s Shared Development Environment
+ (https://eng.lyft.com/building-a-control-plane-for-lyfts-shared-development-environment-6a40266fcf5e)
+
+
 == Interview Guides
 * [Preparing for Interview at Agoda](https://medium.com/agoda-engineering/preparing-for-interview-at-agoda-2c07b7d13ca5): 
 Clear guide for the interview process at Agoda with advices for candidates in each stage.
 
 == Databricks
+
+Architecture
+
+* A data architecture pattern to maximize the value of the Lakehouse
+ (https://www.databricks.com/blog/data-architecture-pattern-maximize-value-lakehouse.html)
+
+Data Pipelines
+
+* How to Evaluate Data Pipelines for Cost to Performance
+ (https://www.databricks.com/blog/2020/11/13/how-to-evaluate-data-pipelines-for-cost-to-performance.html)
 
 Delta Lake
 
