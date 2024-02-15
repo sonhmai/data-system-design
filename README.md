@@ -24,8 +24,10 @@ Blogs
     automatic Jira tickets creation.
 - [Idempotency Keys: How PayPal and Stripe Prevent Duplicate Payment](https://medium.com/@sahintalha1/the-way-psps-such-as-paypal-stripe-and-adyen-prevent-duplicate-payment-idempotency-keys-615845c185bf)
 
+## Data Governance
+Metadata management, data quality, data veracity, data security, data lineage, etc.
 
-## Data Quality
+### Data Quality
 
 Blogs
 - [How Google, Uber, and Amazon Ensure High-Quality Data at Scale](https://medium.com/swlh/how-3-of-the-top-tech-companies-approach-data-quality-79c3146fd959)
@@ -38,23 +40,18 @@ Papers
 
 Best Practices
 - too little data quality alerts let important issues go unresolved.
-- too many alerts overwhelm owners and cause them to not fix the most important ones.
-- statistical modeling techniques (PCA, etc.) can be used to reduce computation need.
+- too many alerts overwhelms and might make the most important ones go un-noticed.
+- statistical modeling techniques (PCA, etc.) can be used to reduce computation resource for quality checks.
 - separate anomaly detection from anomaly scoring and alerting strategy.
 
-Definition
-- issues in `metadata category`  -> can be obtained without checking dataset content
-  - data availability
-  - data freshness
-  - schema changes
-  - data completeness (volume deviation)
+Common Issues
+- issues in `metadata category` (data availability, data freshness, schema changes, data completeness)
+-> can be obtained without checking dataset content
+- issues in `semantic category`(dataset content: column value nullability, duplication, distribution, exceptional values, etc.) 
+-> needs data profiling
 
-- issues in `semantic category`(dataset content) -> needs data profiling
-  - column value nullability
-  - duplication
-  - distribution
-  - exceptional values
-  - etc.
+
+### Data Lineage
 
 
 ## Integration
@@ -92,14 +89,10 @@ Clear guide for the interview process at Agoda with advices for candidates in ea
 - [Managing Recalls with Barcode Traceability on the Delta Lake](https://www.databricks.com/blog/managing-recalls-barcode-traceability-delta-lake)
 - [Creating a Spark Streaming ETL pipeline with Delta Lake at Gousto](https://medium.com/gousto-engineering-techbrunch/creating-a-spark-streaming-etl-pipeline-with-delta-lake-at-gousto-6fcbce36eba6)
   - issues and solutions
-    - costly Spark op `MSCK REPAIR TABLE` because it needs to scan table' sub-tree in S3 bucket. 
-      -> use `ALTER TABLE ADD PARTITION` instead.
-    - not caching dataframes for multiple usages. 
-      -> use cache
-    - rewriting all destination table incl. old partitions when having a new partition. 
-      -> append new partition to destination.
-    - architecture (waiting for CI, Airflow triggering, EMR spinning up, job run, working with AWS console for logs) slowing down development. Min feedback loop of 20 minutes.
-      -> move away from EMR, adopt a platform allowing to have complete control of clusters and prototyping.
+    - costly Spark op `MSCK REPAIR TABLE` because it needs to scan table' sub-tree in S3 bucket. -> use `ALTER TABLE ADD PARTITION` instead.
+    - not caching dataframes for multiple usages. -> use cache
+    - rewriting all destination table incl. old partitions when having a new partition. -> append new partition to destination.
+    - architecture (waiting for CI, Airflow triggering, EMR spinning up, job run, working with AWS console for logs) slowing down development. Min feedback loop of 20 minutes. -> move away from EMR, adopt a platform allowing to have complete control of clusters and prototyping.
   - Databricks Pros
     - Reducing ETL time, latency from 2 hours to 15s by using streaming job and delta architecture.
     - Spark Structured Streaming Autoloader helps manage infra (setting up bucket noti, SNS and SQS in the background).
@@ -108,11 +101,7 @@ Clear guide for the interview process at Agoda with advices for candidates in ea
     - Costs remain the same as before Databricks. (using smaller instances with streaming cluster, which compensated for DBx higher costs vs EMR).
     - Reducing complexity in codebase and deployment (no Airflow).
     - Better ops: performance dashboards, Spark UI, reports.
-  - Extra
-    - DBT used to manage data modeling, ETL from cooked data to Redshift which is used by BI tools and analysts, create SSOT for biz.
-  - Watch out
-    - Need to create schema in Catalog before running as Spark SS and Autoload cannot infer schema at this moment.
-
+  - Other topics: DBT for data modeling, Redshift, SSOT.
 - [Data Modeling Best Practices & Implementation on a Modern Lakehouse](https://www.databricks.com/blog/data-modeling-best-practices-implementation-modern-lakehouse)
 
 
