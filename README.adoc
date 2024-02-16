@@ -195,9 +195,11 @@ Books
 
 
 Blogs
-- Building a Control Plane for Lyft’s Shared Development Environment
- (https://eng.lyft.com/building-a-control-plane-for-lyfts-shared-development-environment-6a40266fcf5e)
 
+* Building a Control Plane for Lyft’s Shared Development Environment
+ (https://eng.lyft.com/building-a-control-plane-for-lyfts-shared-development-environment-6a40266fcf5e)
+* Consistent Hashing: Algorithmic Tradeoffs
+  (https://dgryski.medium.com/consistent-hashing-algorithmic-tradeoffs-ef6b8e2fcae8)
 
 == Interview Guides
 * [Preparing for Interview at Agoda](https://medium.com/agoda-engineering/preparing-for-interview-at-agoda-2c07b7d13ca5): 
