@@ -68,6 +68,8 @@ Papers
 == Data Governance
 Metadata management, data quality, data veracity, data security, data lineage, etc.
 
+* Open Metadata (https://open-metadata.org/)
+
 === Data Quality
 
 Blogs
