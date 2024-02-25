@@ -211,6 +211,12 @@ Blogs
     and HackerNews (https://news.ycombinator.com/item?id=26227339)
 
 
+Papers
+
+* Google, Borg: the next generation (https://www.cs.cmu.edu/~harchol/Papers/EuroSys20.pdf)
+* Google File System (https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf)
+
+
 == Interview Guides
 * [Preparing for Interview at Agoda](https://medium.com/agoda-engineering/preparing-for-interview-at-agoda-2c07b7d13ca5): 
 Clear guide for the interview process at Agoda with advices for candidates in each stage.
