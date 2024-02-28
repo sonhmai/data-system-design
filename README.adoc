@@ -48,6 +48,8 @@ Blogs
  (https://slack.engineering/how-we-design-our-apis-at-slack/)
 * Grafana - How I write HTTP services in Go after 13 years
  (https://grafana.com/blog/2024/02/09/how-i-write-http-services-in-go-after-13-years/)
+* Introducing DoorDash’s In-House Search Engine
+ (https://doordash.engineering/2024/02/27/introducing-doordashs-in-house-search-engine/)
 
 == Data Processing
 Blogs
@@ -232,6 +234,11 @@ Data Pipelines
 
 * How to Evaluate Data Pipelines for Cost to Performance
  (https://www.databricks.com/blog/2020/11/13/how-to-evaluate-data-pipelines-for-cost-to-performance.html)
+
+Spark and Databricks Compute
+
+* Advanced Topics on Spark Optimization and Debug (https://holdenk.github.io/spark-flowchart)
+* Example Code for High Performance Spark book (https://github.com/high-performance-spark/high-performance-spark-examples)
 
 Delta Lake
 
