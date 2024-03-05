@@ -1,0 +1,54 @@
+= Gossip Protocol
+:idprefix:
+:idseparator: -
+:sectanchors:
+:sectlinks:
+:sectnumlevels: 6
+:sectnums:
+:toc: macro
+:toclevels: 6
+:toc-title:
+
+toc::[]
+
+== Concepts
+
+* is a protocol for communicating state between nodes in a cluster without the need for
+a centralized master or coordination service (Zookeeper for example).
+
+== Spark vs Cassandra
+
+why Spark does not use a `gossip protocol` while Cassandra does?
+
+Spark Design Requirements:
+
+* To provide a clear structure for task management, easier to reason about execution and bottlenecks -> Spark designed with `master-worker architecture` where coordination is centralized at the master.
+* Computation result correctness -> `strong consistency` over `eventual consistency` (which gossip protocol offers). Inconsistent state, task result can lead to wrong computation result which is not wanted.
+* Deterministic execution, timeline -> `single-leader`, strong consistency.
+* Resource tracking -> driver needs to have an accurate state of cluster resources at all time, not an eventually-consistent picture of it.
+
+Cassandra Design Requirements:
+
+* highly-available (database is operational in case of node failures and network partition)
+-> use decentralized `gossip protocol` to avoid single-point of failure.
+* scalability -> use decentralized `gossip protocol` to avoid single-leader write-path bottleneck.
+Node can be added to the cluster to scale the write workload almost linearly.
+* write-heavy distributed database. -> lean on the `eventual consistency` side to have
+faster write with the trade-off of possible stale reads.
+
+
+|===
+| Feature | Apache Spark | Apache Cassandra
+
+| Model | Centralized Coordination | Gossip Protocol (Eventual Consistency)
+
+| Pros | Strong consistency, streamlined execution | High availability, fault tolerance, scalability
+
+| Cons | Potential bottleneck at the driver, less tolerant of network issues | Eventual consistency might not suit all workloads
+
+| Best for | Analytical workloads, tasks with dependencies | High-write, distributed databases needing extreme availability
+|===
+
+== References
+
+* Unlocking Rust Secrets: Implementing a Gossip Protocol (https://www.youtube.com/watch?v=308lfrgfxvo)

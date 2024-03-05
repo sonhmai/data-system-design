@@ -13,6 +13,39 @@ Collection of useful notes, readings, videos, codes related to data systems desi
 
 toc::[]
 
+
+== System Design Resources
+
+=== Learning Resources Repos
+
+- https://github.com/karanpratapsingh/system-design
+- https://github.com/donnemartin/system-design-primer
+- https://gist.github.com/vasanthk/485d1c25737e8e72759f
+
+=== Books
+
+* [Patterns of Distributed Systems. Unmesh Joshi](https://www.amazon.com/Patterns-Distributed-Systems-Addison-Wesley-Signature/dp/0138221987)
+
+
+=== Blogs
+
+* Building a Control Plane for Lyft’s Shared Development Environment
+(https://eng.lyft.com/building-a-control-plane-for-lyfts-shared-development-environment-6a40266fcf5e)
+* Consistent Hashing: Algorithmic Tradeoffs
+(https://dgryski.medium.com/consistent-hashing-algorithmic-tradeoffs-ef6b8e2fcae8)
+* Why Discord is switching from Go to Rust (https://discord.com/blog/why-discord-is-switching-from-go-to-rust),
+more on Reddit (https://www.reddit.com/r/golang/comments/eywx4q/why_discord_is_switching_from_go_to_rust/)
+and HackerNews (https://news.ycombinator.com/item?id=26227339)
+
+
+=== Papers
+(also available in Papers folder)
+
+* Google, Borg: the next generation (https://www.cs.cmu.edu/~harchol/Papers/EuroSys20.pdf)
+* Google File System (https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf)
+* ZooKeeper: Wait-free coordination for Internet-scale systems (https://www.usenix.org/legacy/event/atc10/tech/full_papers/Hunt.pdf)
+
+
 == Data Architecture
 
 Blogs
@@ -189,37 +222,6 @@ Incidents
 
 * Slack’s Incident on 2022-Feb-22
 (https://slack.engineering/slacks-incident-on-2-22-22/)
-
-== System Design Resources
-
-=== Learning Resources Repos
-
-  - https://github.com/karanpratapsingh/system-design
-  - https://github.com/donnemartin/system-design-primer
-  - https://gist.github.com/vasanthk/485d1c25737e8e72759f
-
-=== Books
-
-* [Patterns of Distributed Systems. Unmesh Joshi](https://www.amazon.com/Patterns-Distributed-Systems-Addison-Wesley-Signature/dp/0138221987)
-
-
-=== Blogs
-
-* Building a Control Plane for Lyft’s Shared Development Environment
- (https://eng.lyft.com/building-a-control-plane-for-lyfts-shared-development-environment-6a40266fcf5e)
-* Consistent Hashing: Algorithmic Tradeoffs
-  (https://dgryski.medium.com/consistent-hashing-algorithmic-tradeoffs-ef6b8e2fcae8)
-* Why Discord is switching from Go to Rust (https://discord.com/blog/why-discord-is-switching-from-go-to-rust),
-    more on Reddit (https://www.reddit.com/r/golang/comments/eywx4q/why_discord_is_switching_from_go_to_rust/)
-    and HackerNews (https://news.ycombinator.com/item?id=26227339)
-
-
-=== Papers 
-(also available in Papers folder)
-
-* Google, Borg: the next generation (https://www.cs.cmu.edu/~harchol/Papers/EuroSys20.pdf)
-* Google File System (https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf)
-* ZooKeeper: Wait-free coordination for Internet-scale systems (https://www.usenix.org/legacy/event/atc10/tech/full_papers/Hunt.pdf)
 
 
 == Interview Guides
