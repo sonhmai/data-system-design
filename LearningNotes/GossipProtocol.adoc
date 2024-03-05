@@ -1,6 +1,17 @@
 = Gossip Protocol
+:idprefix:
+:idseparator: -
+:sectanchors:
+:sectlinks:
+:sectnumlevels: 6
+:sectnums:
+:toc: macro
+:toclevels: 6
+:toc-title:
 
-Definition
+toc::[]
+
+== Concepts
 
 * is a protocol for communicating state between nodes in a cluster without the need for
 a centralized master or coordination service (Zookeeper for example).
@@ -37,3 +48,7 @@ faster write with the trade-off of possible stale reads.
 
 | Best for | Analytical workloads, tasks with dependencies | High-write, distributed databases needing extreme availability
 |===
+
+== References
+
+* Unlocking Rust Secrets: Implementing a Gossip Protocol (https://www.youtube.com/watch?v=308lfrgfxvo)
