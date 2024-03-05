@@ -101,15 +101,15 @@
 
 ### From [Zookeeper paper](https://www.usenix.org/legacy/event/atc10/tech/full_papers/Hunt.pdf) and website
 
-![img.png](zk_cluster.png)
+![img.png](images/zk_cluster.png)
 
-![img.png](zookepper_hierarchical_namespace.png)
+![img.png](images/zookepper_hierarchical_namespace.png)
 
-![img_1.png](zookeeper_components.png)
+![img_1.png](images/zookeeper_components.png)
 
 ### From [educative system design, Zookeeper introduction](https://www.educative.io/courses/grokking-the-principles-and-practices-of-advanced-system-design/introduction-to-zookeeper)
 
-![img.png](zk_concept_map.png)
+![img.png](images/zk_concept_map.png)
 
 
 ## References
