@@ -1,0 +1,109 @@
+= DeltaLake
+:idprefix:
+:idseparator: -
+:sectanchors:
+:sectlinks:
+:sectnumlevels: 6
+:sectnums:
+:toc: macro
+:toclevels: 6
+:toc-title:
+
+toc::[]
+
+== Best Practices
+
+* Problem: frequent writes result in small files
+** `Run regular Optimize (Compact)`. Auto compaction and optimized writes each reduce small file problems, but are not a full replacement for OPTIMIZE.
+** https://docs.databricks.com/en/delta/tune-file-size.html#optimized-writes[Enable optimized writes] to have big target file size in case a fixed target size is needed,
+otherwise Databricks autotune file size.
+** https://docs.databricks.com/en/delta/tune-file-size.html#set-a-target-file-size[Set table property target file size] delta.targetFileSize so all data layout optimizations (optimize, Z-order, auto compaction, optimized writes) will make best-effort attempt.
+** https://docs.databricks.com/en/delta/tune-file-size.html#upgrade-to-background-auto-compaction[Use auto compaction]
+
+* Problem: unused/ zombie files increasing storage cost, Vacuum
+
+* Problem: data scanned more than necessary, Proper Partitioning
+
+* Problem: manual maintenance Delta tables takes much effort, Predictive Optimization (cannot used in Singapore region currently)
+
+* Problem: long time to compute table state,
+
+* Problem: s3 eventual consistency,
+
+=== Dealing with Schema Evolution
+
+
+=== Proper partitioning and data layout optimization
+
+* SCD2
+    -> no partitioning
+* Periodic snapshot (transactions, etc.)
+    -> partition by business month/ day/ hour  following business semantics
+
+=== Auto Compaction
+* where does it run? Auto compaction tasks execute as background jobs on your clusters in parallel with your workloads.
+
+
+=== Predictive Optimization
+
+* ref https://docs.databricks.com/en/optimizations/predictive-optimization.html
+* Prerequisites:
+** in a region that supports it. Currently `ap-southeast-1 (Singapore) is not supported`.
+** only supports Unity Catalog managed tables.
+** Serverless Compute must be enabled.
+* Pricing Model:
+** Predictive optimization identifies tables that would benefit from OPTIMIZE and VACUUM operations and queues them to run using jobs compute.
+** Your account is billed for compute associated with these workloads using a SKU specific to Databricks Managed Services.
+* History of predictive optimization is tracked in system table https://docs.databricks.com/en/administration-guide/system-tables/predictive-optimization.html[Predictive optimization system table reference].
+
+
+
+=== Optimize vs Checkpoint
+
+[%header,format=csv]
+|===
+Category, Optimize, Checkpoint
+
+Effect
+    File Management. Less files to process -> faster read.
+    Transaction Log Management. Less log entries to process -> faster read.
+Impact
+    optimize can indirectly shorten xlog (older transaction related to compacted files not needed anymore)
+    checkpoints don't change file organization on disk.
+|===
+
+Optimize
+
+* Combines smaller data files into larger ones.
+* Improves read performance by decreasing the number of files to process.
+* Helps manage overall file sizes.
+
+Checkpoint
+
+* Creates a "save point" of the transaction log and metadata.
+* Improves the efficiency of determining the latest table state for reads by reducing the volume of transaction logs to process.
+* Can aid in recovery, but that's not their primary function.
+
+== References
+* https://community.databricks.com/t5/data-engineering/what-is-the-difference-between-optimize-and-auto-optimize/td-p/21189[Operating and Supporting Delta lake in production]
+
+=== Delta table properties
+https://docs.databricks.com/en/delta/table-properties.html
+[start=1]
+. `delta.appendOnly`
+. `delta.autoOptimize.autoCompact`
+. `delta.autoOptimize.optimizeWrite`
+. delta.checkpoint.writeStatsAsJson
+. delta.checkpoint.writeStatsAsStruct
+. delta.checkpointPolicy: classic or v2
+. `delta.isolationLevel` (default) WriteSerializable, Serializable
+. delta.logRetentionDuration
+. delta.minReaderVersion: default 1
+. delta.minWriterVersion: default 2
+. delta.randomizeFilePrefixes
+. delta.randomPrefixLength
+. delta.setTransactionRetentionDuration
+. delta.targetFileSize: string, 104857600 (bytes) or 100mb
+. delta.tuneFileSizesForRewrites
+
+
