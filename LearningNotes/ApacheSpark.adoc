@@ -1,0 +1,134 @@
+= Apache Spark
+:idprefix:
+:idseparator: -
+:sectanchors:
+:sectlinks:
+:sectnumlevels: 6
+:sectnums:
+:toc: macro
+:toclevels: 6
+:toc-title:
+
+toc::[]
+
+
+Does Spark use a gossip protocol? Why?
+
+. No, Spark does not use a Gossip Protocol.
+
+== Structured Streaming
+
+How to achieve exactly once from Kafka to Kafka for stateless job?
+
+Performance bottleneck
+[start=1]
+. Tune your Kafka brokers (num.io.threads, num.network.threads)
+. Avoid cloud services rate limit.
+
+=== Checkpointing
+Checkpoint is to track the progress of a query in persistent storage.
+
+
+----
+aggDF
+  .writeStream
+  .outputMode("complete")
+  .option("checkpointLocation", "path/to/HDFS/dir")  // checkpointing
+  .format("memory")
+  .start()
+----
+
+How does `S3 eventual consistency` affect checkpointing?
+
+To reuse checkpoint, what `can be changed`
+[start=1]
+. Sinks
+. Input/ Output schema (in the absence of stateful operations)
+. Triggers
+. Transformations
+. Spark Versions
+
+
+To reuse checkpoint, what `cannot be changed`
+[start=1]
+. Stateful operations
+. Output Mode (will work, but semantics of stream has changed)
+. Sources
+
+Work-arounds
+[start=1]
+. Restart stream from scratch
+.. use new checkpoint location - avoid S3 eventual consistency
+.. partition source tables by date, restart stream from a given data
+
+=== Testing
+Best Practices
+[start=1]
+. Use Spark `StreamTest` harness for unit tests. Use `MemorySource` and `MemorySink` to test business logic.
+. Test data dependencies, schema changes upstream can break downstream jobs.
+
+=== Monitoring
+
+==== Push metrics to external services
+. Leverage `StreamingQueryListener` API. Push data to metrics store (Cloudwatch, Prometheus).
+
+
+https://docs.databricks.com/en/structured-streaming/stream-monitoring.html[Example Kafka-to-Kafka StreamingQueryListener event]
+[source, jsonlines]
+----
+{
+  "id" : "3574feba-646d-4735-83c4-66f657e52517",
+  "runId" : "38a78903-9e55-4440-ad81-50b591e4746c",
+  "name" : "STREAMING_QUERY_NAME_UNIQUE",
+  "timestamp" : "2022-10-31T20:09:30.455Z",
+  "batchId" : 1377,
+  "numInputRows" : 687,
+  "inputRowsPerSecond" : 32.13433743393049,
+  "processedRowsPerSecond" : 34.067241892293964,
+  "sources": [
+    {}, // source 1
+    {}, // source 2...
+  ],
+  "sink": {},
+  // info about time it takes to complete stages of micro-batch exec process
+  "durationMs": {},
+  // info about event time value seen in data in the micro-batch.
+  "eventTime": {},
+  "stateOperators": [ // info of stateful operations and aggregations
+    {},
+    {}
+  ],
+
+}
+----
+
+
+=== Deploying
+
+. One cluster per stream
+. Multiplex many streams on a single cluster
+.. Pros
+... Better cluster utilization
+... Potential delta cache re-use
+.. Cons
+... Driver becomes a bottleneck
+... Determining how many is difficult
+... Load balancing streams across clusters also difficult
+
+
+What causes bottlenecks in driver in multiplexing many streams on same cluster?
+[start=1]
+. Locks
+.. JSON Serialization of offsets in streaming (Jackson)
+.. Scala compiler (Encoder creation)
+.. Hadoop Configurations (java.util.Properties)
+.. Whole Stage Codegen (ClassLoader.loadClass)
+. Garbage Collection
+
+
+=== Streaming Kafka Integration
+
+
+== References
+[start=1]
+. https://www.youtube.com/watch?v=uP9bpaNvrvM&t[Video, Productizing Structured Streaming Jobs]
