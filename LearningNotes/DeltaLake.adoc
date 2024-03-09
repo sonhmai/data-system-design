@@ -20,15 +20,20 @@ otherwise Databricks autotune file size.
 ** https://docs.databricks.com/en/delta/tune-file-size.html#set-a-target-file-size[Set table property target file size] delta.targetFileSize so all data layout optimizations (optimize, Z-order, auto compaction, optimized writes) will make best-effort attempt.
 ** https://docs.databricks.com/en/delta/tune-file-size.html#upgrade-to-background-auto-compaction[Use auto compaction]
 
-* Problem: unused/ zombie files increasing storage cost, Vacuum
+* Problem: unused/ zombie files increasing storage cost
+** Solution: Vacuum
 
-* Problem: data scanned more than necessary, Proper Partitioning
+* Problem: data scanned more than necessary
+** Solution: Proper Partitioning
 
-* Problem: manual maintenance Delta tables takes much effort, Predictive Optimization (cannot used in Singapore region currently)
+* Problem: manual maintenance Delta tables takes much effort,
+** Solution: Predictive Optimization (cannot used in Singapore region currently)
 
-* Problem: long time to compute table state,
+* Problem: long time to compute table state
+** Solution: ??
 
-* Problem: s3 eventual consistency,
+* Problem: s3 eventual consistency
+** Solution: ??
 
 === Dealing with Schema Evolution
 
