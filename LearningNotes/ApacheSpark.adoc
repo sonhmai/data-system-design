@@ -128,6 +128,33 @@ What causes bottlenecks in driver in multiplexing many streams on same cluster?
 
 === Streaming Kafka Integration
 
+==== Read
+. Structured Streaming does not commit offset back to Kafka.
+It manages partition -> offset internally by checkpointing them.
+. Checkpointing process is not in `KafkaSource`, rather in Spark streaming core classes.
+It uses offsets provided by KafkaSource to checkpoint the streaming job state.
+
+
+Sequence of Interactions
+[start=1]
+1. `Source Creation`: When a query is defined using DataFrameReader.format("kafka"), Spark internally uses KafkaSourceProvider to instantiate the appropriate source based on the query's execution mode (micro-batch or continuous).
+2. `Offset Fetching`: At the start of each micro-batch (or continuously in the case of continuous processing), KafkaSource or KafkaContinuousReader uses KafkaOffsetReader to query Kafka for the latest available offsets for the subscribed topics and partitions.
+3. `Data Fetching`: With the start and end offsets determined, Spark then uses the Kafka consumer API (KafkaConsumer) to fetch the records from Kafka. In micro-batch mode, this happens for each batch. In continuous mode, this happens continuously.
+4. `DataFrame Conversion`: The fetched records are converted into a DataFrame, with each Kafka record becoming a row in the DataFrame. This involves deserializing the key, value, and other metadata from each Kafka record.
+5. `Query Execution`: The DataFrame is then processed according to the user-defined query operations (e.g., transformations, aggregations). This processing can involve multiple Spark executors depending on the query and cluster configuration.\
+6. `Checkpointing`: Throughout this process, Spark Structured Streaming maintains checkpoint information, including offsets and query state, to ensure fault tolerance and allow queries to be restarted from where they left off in case of failure.
+
+https://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html#kafka-specific-configurations[Kafka configs]
+[start=1]
+. enable.auto.commit=false
+
+Source code
+
+. https://github.com/apache/spark/blob/master/connector/kafka-0-10-sql/src/main/scala/org/apache/spark/sql/kafka010/KafkaSource.scala[spark/sql/kafka010/KafkaSource.scala]
+. https://github.com/apache/spark/blob/master/connector/kafka-0-10-sql/src/test/scala/org/apache/spark/sql/kafka010/KafkaMicroBatchSourceSuite.scala[KafkaMicroBatchSourceSuite.scala]
+
+==== Write
+
 
 == References
 [start=1]
