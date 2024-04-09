@@ -89,6 +89,55 @@ Checkpoint
 * Improves the efficiency of determining the latest table state for reads by reducing the volume of transaction logs to process.
 * Can aid in recovery, but that's not their primary function.
 
+== Change Data Feed
+
+[source]
+----
+-- Show the history of table change events
+DESCRIBE HISTORY myschema.t;
+
+-- Show the change table feed using a the commit timestamp retrieved from the history.
+SELECT *
+FROM table_changes('`myschema`.`t`', 2);
+
+-- Show the ame change table feed using a point in time.
+SELECT *
+FROM table_changes('`myschema`.`t`', '2022-09-01T18:32:27.000+0000')
+ORDER BY _commit_version;
+
+-- incrementally move data from Bronze to Silver with merge
+MERGE INTO TaxisDB.YellowTaxis_Silver tgt
+    USING BronzeChanges src
+    ON tgt.VendorId = src.VendorId
+    AND tgt.RideId = src.RideId
+WHEN MATCHED THEN UPDATE SET
+    tgt.PassengerCount = tgt.PassengerCount,
+    tgt.TripDistance = tgt.TripDistance,
+    tgt.TotalAmount = src.TotalAmount,
+    -- technical field ModifiedOn added for Silver
+    tgt.ModifiedOn = CURRENT_TIMESTAMP()
+WHEN NOT MATCHED THEN
+    INSERT (RideId, VendorId, PassengerCount, TripDistance, TotalAmount)
+    VALUES (RideId, VendorId, PassengerCount, TripDistance, TotalAmount)
+
+-- overwrite the whole Gold table by an aggregate query on whole Silver
+INSERT OVERWRITE TaxisDB.YellowTaxis_Gold
+    SELECT PickupYear, PickupMonth, PickupDay
+        , Count(RideId) as TotalRides
+        , Sum(TripDistance) as TotalDistance
+        , Sum(TotalAmount) as TotalAmount
+    FROM TaxisDB.YellowTaxis_Silver
+    GROUP BY PickupYear, PickUpMonth, PickUpDay
+----
+
+All change types
+
+. insert
+. update_preimage
+. update_postimage
+. delete
+
+
 == References
 * https://community.databricks.com/t5/data-engineering/what-is-the-difference-between-optimize-and-auto-optimize/td-p/21189[Operating and Supporting Delta lake in production]
 

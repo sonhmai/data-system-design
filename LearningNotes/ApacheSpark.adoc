@@ -243,3 +243,8 @@ val ds = df
 == References
 [start=1]
 . https://www.youtube.com/watch?v=uP9bpaNvrvM&t[Video, Productizing Structured Streaming Jobs]
+. Shuffle
+.. https://cwiki.apache.org/confluence/display/SPARK/Shuffle+Internals
+.. https://0x0fff.com/spark-architecture-shuffle/
+.. https://people.eecs.berkeley.edu/~kubitron/courses/cs262a-F13/projects/reports/project16_report.pdf[Paper - xOptimizing Shuffle Performance in Spark]
+.. https://issues.apache.org/jira/browse/SPARK-7081[Tungsten's sort idea]
