@@ -248,3 +248,9 @@ val ds = df
 .. https://0x0fff.com/spark-architecture-shuffle/
 .. https://people.eecs.berkeley.edu/~kubitron/courses/cs262a-F13/projects/reports/project16_report.pdf[Paper - xOptimizing Shuffle Performance in Spark]
 .. https://issues.apache.org/jira/browse/SPARK-7081[Tungsten's sort idea]
+
+. Optimization
+.. https://developer.ibm.com/blogs/spark-performance-optimization-guidelines/[IBM Spark performance optimization guidelines]
+.. https://www.youtube.com/watch?v=daXEp4HmS-E[Youtube, Apache Spark Core—Deep Dive—Proper Optimization, Daniel Tomes, Databricks]
+
+
