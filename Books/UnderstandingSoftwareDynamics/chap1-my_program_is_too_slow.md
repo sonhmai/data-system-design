@@ -40,3 +40,4 @@ Order of magnitude estimate
 
 References
 - [Napkin math: Techniques and numbers for estimating system's performance from first-principles](https://github.com/sirupsen/napkin-math)
+- [YouTube, Advanced Napkin Math: Estimating System Performance from First Principles](https://www.youtube.com/watch?v=IxkSlnrRFqc)
