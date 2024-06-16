@@ -44,6 +44,16 @@ and HackerNews (https://news.ycombinator.com/item?id=26227339)
 * Google, Borg: the next generation (https://www.cs.cmu.edu/~harchol/Papers/EuroSys20.pdf)
 * Google File System (https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf)
 * ZooKeeper: Wait-free coordination for Internet-scale systems (https://www.usenix.org/legacy/event/atc10/tech/full_papers/Hunt.pdf)
+* An Empirical Evaluation of Columnar Storage Formats
+* Froid: Optimization of Imperative Programs in a Relational Database (K. Ramachandra, et al., VLDB 2017)
+* Don't Hold My Data Hostage: A Case for Client Protocol Redesign (M. Raasveldt, et al., VLDB 2017)
+* An Overview of Query Optimization in Relational Systems (S. Chaudhuri, PODS 1998)
+* Dremel: A Decade of Interactive SQL Analysis at Web Scale (S. Melnik, et al., VLDB 2020)
+* Photon: A Fast Query Engine for Lakehouse Systems (A. Behm, et al., SIGMOD 2022)
+* The Snowflake Elastic Data Warehouse (B. Dageville, et al., SIGMOD 2016)
+* DuckDB: an Embeddable Analytical Database (M. Raasveldt, et al., SIGMOD 2019)
+* Yellowbrick: An Elastic Data Warehouse on Kubernetes (M. Cusack, et al., CIDR 2024)
+* Amazon Redshift Re-Invented (N. Armenatzoglou, et al., SIGMOD 2022)
 
 
 == Data Architecture
