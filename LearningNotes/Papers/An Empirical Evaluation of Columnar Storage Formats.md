@@ -5,6 +5,8 @@ Goal: providing insights for next-gen columnar storage format by
 - a benchmark to stress-test them on different workloads.
 - discussing their good and bad design decisions for modern hardware and data workloads through benchmark metrics.
 
+Terms
+- low-selectivity: query returning a high number of records (not filtering much)
 
 Findings
 1. Parquet ~ ORC: no clear winner
@@ -43,9 +45,13 @@ Not good designs for ML and GPU
 - stronger compression is preferred in GPU due to bigger IO overhead > CPU
 
 
-Feature Taxonomy
+## 3-Feature Taxonomy
 
 ![img.png](columnar_feature_taxonomy.png)
+
+### 3.1-Format Layout
+
+![img.png](columnar_format_layout.png)
 
 Benchmark 
 - NDV ratio (number distinct values)
@@ -61,11 +67,31 @@ Benchmark
 ## 5-discussing benchmark results 
 
 ### 5.1-experiment setup
+
 ### 5.2-result overview
+
 ### 5.3-encoding analysis
+
 ### 5.4-block compression
+
 ### 5.5-wide table projection
+
+what a good format should do? 
+support wide table projection as ML training queries typically a subset of features. (e.g. a model needs 100 amongst 2000 features of a customer)
+
+[Shared Foundations: Modernizing Meta’s Data Lakehouse](https://www.cidrdb.org/cidr2023/papers/p77-chattopadhyay.pdf)
+- ML tables > analytical tables by up to an order of magnitude.
+- ML tables are also typically much wider: tens of thousands of features usually stored as large maps.
+
+
+![img.png](columnar_wide_table_projection.png)
+- breakdown of avg latency of projection queries (randomly select 10 attributes)
+- metadata parsing overhead increased linearly with #features because
+  - efficient random access not supported in footer structure in Parquet/ORC to per-column schema
+  - schema information is serialized in Thrift (Parquet) or Protocol Buffer (ORC), which only supports sequential decoding
+
 ### 5.6-index and filter
+
 ### 5.7-nested data model
 
 ### 5.8-machine learning workloads
