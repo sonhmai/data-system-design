@@ -62,6 +62,7 @@ Blogs
 
 * Grab, Enabling near real-time data analytics on the data lake
  (https://engineering.grab.com/enabling-near-realtime-data-analytics)
+* https://www.decodable.co/blog/taxonomy-of-data-change-events[A Taxonomy Of Data Change Events]
 
 == Data Storage
 Terms
@@ -72,6 +73,10 @@ Terms
   Copy On Write vs Merge On Read, Compaction, Vacuum,
   OCC (Optimistic Concurrency Control), MVCC (Multiversion Concurrency Control)
 )
+
+Blogs
+
+* https://turbopuffer.com/blog/turbopuffer[turbopuffer: fast search on object storage]
 
 == Data Consumption
 
