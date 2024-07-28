@@ -111,6 +111,7 @@ Blogs
     automatic Jira tickets creation.
 * Scheduling Data Pipelines at Criteo — Part 1
  (https://medium.com/criteo-engineering/scheduling-data-pipelines-at-criteo-part-1-8b257c6c8e55)
+* https://netflixtechblog.com/orchestrating-data-ml-workflows-at-scale-with-netflix-maestro-aaa2b41b800c[Orchestrating Data/ML Workflows at Scale With Netflix Maestro]
 
 
 Papers
@@ -118,6 +119,9 @@ Papers
 * Apache Arrow DataFusion: A Fast, Embeddable, Modular Analytic Query Engine (https://github.com/apache/arrow-datafusion/issues/6782).
   Written in Rust, uses Apache Arrow as memory model.
 
+Projects
+
+* https://github.com/flyteorg/flyte: orchestrator
 
 == Data Governance
 Metadata management, data quality, data veracity, data security, data lineage, etc.
