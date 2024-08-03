@@ -112,7 +112,10 @@ Blogs
 * Scheduling Data Pipelines at Criteo — Part 1
  (https://medium.com/criteo-engineering/scheduling-data-pipelines-at-criteo-part-1-8b257c6c8e55)
 * https://netflixtechblog.com/orchestrating-data-ml-workflows-at-scale-with-netflix-maestro-aaa2b41b800c[Orchestrating Data/ML Workflows at Scale With Netflix Maestro]
-
+* Netflix's Dataflow: bootstrapping, standardization, automation of batch data pipelines
+** https://netflixtechblog.com/data-pipeline-asset-management-with-dataflow-86525b3e21ca[Data pipeline asset management with Dataflow]
+** https://netflixtechblog.com/ready-to-go-sample-data-pipelines-with-dataflow-17440a9e141d[Ready-to-go sample data pipelines with Dataflow]
+** https://netflixtechblog.medium.com/etl-development-life-cycle-with-dataflow-9c70c64aba7b[ETL development lifecycle (testing and deployment) with Dataflow]
 
 Papers
 
