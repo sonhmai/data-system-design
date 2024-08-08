@@ -20,30 +20,32 @@ toc::[]
 
 - https://github.com/karanpratapsingh/system-design
 - https://github.com/donnemartin/system-design-primer
-- https://gist.github.com/vasanthk/485d1c25737e8e72759f
 
 === Books
 
-* [Patterns of Distributed Systems. Unmesh Joshi](https://www.amazon.com/Patterns-Distributed-Systems-Addison-Wesley-Signature/dp/0138221987)
+* https://www.amazon.com/Understanding-Distributed-Systems-Second-applications/dp/1838430210[Understanding Distributed Systems: What every developer should know about large distributed applications]
+* https://www.amazon.com/Designing-Data-Intensive-Applications-Reliable-Maintainable/dp/1449373321[Design Data-Intensive Applications]
+* https://www.amazon.com/Patterns-Distributed-Systems-Addison-Wesley-Signature/dp/0138221987[Patterns of Distributed Systems. Unmesh Joshi]
 
 
 === Blogs
 
-* Building a Control Plane for Lyft’s Shared Development Environment
-(https://eng.lyft.com/building-a-control-plane-for-lyfts-shared-development-environment-6a40266fcf5e)
-* Consistent Hashing: Algorithmic Tradeoffs
-(https://dgryski.medium.com/consistent-hashing-algorithmic-tradeoffs-ef6b8e2fcae8)
-* Why Discord is switching from Go to Rust (https://discord.com/blog/why-discord-is-switching-from-go-to-rust),
-more on Reddit (https://www.reddit.com/r/golang/comments/eywx4q/why_discord_is_switching_from_go_to_rust/)
-and HackerNews (https://news.ycombinator.com/item?id=26227339)
+* https://eng.lyft.com/building-a-control-plane-for-lyfts-shared-development-environment-6a40266fcf5e[Building a Control Plane for Lyft’s Shared Development Environment]
+* https://dgryski.medium.com/consistent-hashing-algorithmic-tradeoffs-ef6b8e2fcae8[Consistent Hashing: Algorithmic Tradeoffs]
+* https://discord.com/blog/why-discord-is-switching-from-go-to-rust[Why Discord is switching from Go to Rust], interesting discussions on https://www.reddit.com/r/golang/comments/eywx4q/why_discord_is_switching_from_go_to_rust/[ Reddit thread], https://news.ycombinator.com/item?id=26227339[Hackernews].
+* https://encore.dev/blog/queueing[Queueing: an interactive study of queueing strategies]
+* https://muratbuffalo.blogspot.com/2024/07/understanding-performance-implications.html[Understanding the Performance Implications of Storage-Disaggregated Databases]
 
+Replication
+
+* https://transactional.blog/blog/2024-data-replication-design-spectrum[Blog - Data Replication Design Spectrum]
 
 === Papers
 (also available in Papers folder)
 
-* Google, Borg: the next generation (https://www.cs.cmu.edu/~harchol/Papers/EuroSys20.pdf)
-* Google File System (https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf)
-* ZooKeeper: Wait-free coordination for Internet-scale systems (https://www.usenix.org/legacy/event/atc10/tech/full_papers/Hunt.pdf)
+* https://www.cs.cmu.edu/~harchol/Papers/EuroSys20.pdf[Google, Borg: the next generation]
+* https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf[Google File System]
+* https://www.usenix.org/legacy/event/atc10/tech/full_papers/Hunt.pdf[ZooKeeper: Wait-free coordination for Internet-scale systems]
 * An Empirical Evaluation of Columnar Storage Formats
 * Froid: Optimization of Imperative Programs in a Relational Database (K. Ramachandra, et al., VLDB 2017)
 * Don't Hold My Data Hostage: A Case for Client Protocol Redesign (M. Raasveldt, et al., VLDB 2017)
@@ -54,6 +56,7 @@ and HackerNews (https://news.ycombinator.com/item?id=26227339)
 * DuckDB: an Embeddable Analytical Database (M. Raasveldt, et al., SIGMOD 2019)
 * Yellowbrick: An Elastic Data Warehouse on Kubernetes (M. Cusack, et al., CIDR 2024)
 * Amazon Redshift Re-Invented (N. Armenatzoglou, et al., SIGMOD 2022)
+* https://dl.acm.org/doi/10.1145/3654983[Understanding the Performance Implications of the Design Principles in Storage-Disaggregated Databases]
 
 
 == Data Architecture
@@ -246,9 +249,9 @@ Incidents
 (https://slack.engineering/slacks-incident-on-2-22-22/)
 
 
-== Interview Guides
-* [Preparing for Interview at Agoda](https://medium.com/agoda-engineering/preparing-for-interview-at-agoda-2c07b7d13ca5): 
-Clear guide for the interview process at Agoda with advices for candidates in each stage.
+== Interview Resources
+* https://medium.com/agoda-engineering/preparing-for-interview-at-agoda-2c07b7d13ca5[Preparing for Interview at Agoda]: interview process at Agoda with advices for candidates in each stage.
+* https://gist.github.com/vasanthk/485d1c25737e8e72759f[System Design Cheatsheet]
 
 == Databricks
 
@@ -299,3 +302,4 @@ Backfilling
 * https://docs.databricks.com/en/ingestion/auto-loader/production.html=trigger-regular-backfills-using-cloudfilesbackfillinterval
 * https://community.databricks.com/t5/data-engineering/how-to-make-structured-streaming-with-autoloader-efficiently-and/td-p/47833
 * Autoloader start and end date for ingestion (https://community.databricks.com/t5/data-engineering/autoloader-start-and-end-date-for-ingestion/td-p/45523)
+
