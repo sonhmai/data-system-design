@@ -40,6 +40,10 @@ Replication
 
 * https://transactional.blog/blog/2024-data-replication-design-spectrum[Blog - Data Replication Design Spectrum]
 
+Performance
+
+* https://tigerbeetle.com/blog/a-friendly-abstraction-over-iouring-and-kqueue[A Programmer-Friendly I/O Abstraction Over io_uring and kqueue]
+
 === Papers
 (also available in Papers folder)
 
@@ -57,7 +61,7 @@ Replication
 * Yellowbrick: An Elastic Data Warehouse on Kubernetes (M. Cusack, et al., CIDR 2024)
 * Amazon Redshift Re-Invented (N. Armenatzoglou, et al., SIGMOD 2022)
 * https://dl.acm.org/doi/10.1145/3654983[Understanding the Performance Implications of the Design Principles in Storage-Disaggregated Databases]
-
+* SparkFuzz - searching correctness regressions in modern query engines
 
 == Data Architecture
 
