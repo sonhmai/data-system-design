@@ -109,7 +109,7 @@ Blogs
 == Data Processing
 Blogs
 
-* [Agoda, How to Design and Maintain a High-Performing Data Pipeline](https://medium.com/agoda-engineering/how-to-design-maintain-a-high-performing-data-pipeline-63b1603b8e4a) 
+* https://medium.com/agoda-engineering/how-to-design-maintain-a-high-performing-data-pipeline-63b1603b8e4a[Agoda, How to Design and Maintain a High-Performing Data Pipeline]
   ** Data pipeline scalability: SLA, partioning, data freshness, resource usage, scheduling, data dependency, monitoring.
   ** Data quality: freshness, integrity (uniqueness e.g. no dup keys), completeness (e.g. no empty, NULLS),
     accuracy (value is not abnormal by checking with previous trend, ThridEye), 
@@ -307,3 +307,21 @@ Backfilling
 * https://community.databricks.com/t5/data-engineering/how-to-make-structured-streaming-with-autoloader-efficiently-and/td-p/47833
 * Autoloader start and end date for ingestion (https://community.databricks.com/t5/data-engineering/autoloader-start-and-end-date-for-ingestion/td-p/45523)
 
+== Performance
+
+Papers
+
+* https://www.usenix.org/conference/atc18/presentation/yang-stephen[NanoLog: A Nanosecond Scale Logging System]. https://github.com/sonhmai/NanoLog[github repo]
+** Implemented fast, low latency, high thruput C++ logging system.
+*** 10-100x faster than existing systems (Log4js, spdlog)
+*** maintains printf-like semantics
+*** 80M msg/sec at median latency of 8ns in microbenchmarks, 18ns in apps
+** How?
+*** shifting work out of the runtime hot path and into the compilation and post-execution phases of the application.
+*** deferring formatting to an offline process.
+** Benefit: allows detailed logs in low latency systems
+** costs: 512KB RAM per thread, one core, disk BW.
+
+== Databases
+
+* https://transactional.blog/blog/2024-database-startups[2024 Database startups]
