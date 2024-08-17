@@ -63,6 +63,20 @@ Performance
 * https://dl.acm.org/doi/10.1145/3654983[Understanding the Performance Implications of the Design Principles in Storage-Disaggregated Databases]
 * SparkFuzz - searching correctness regressions in modern query engines
 
+=== Video Courses
+
+* https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB[Distributed Systems Lecture Series by Martin Kleppmann]
+* https://www.youtube.com/watch?v=cQP8WApzIQQ&list=PLrw6a1wE39_tb2fErI4-WkMbsvGQk9_UB[MIT 6.824: Distributed Systems Course, 2020.]
+
+=== Learning Goals
+
+
+ can describe following terms
+- state machine replication within a shard
+- two-phase locking for serializable transaction isolation
+- two-phase commit for cross-shard atomicity
+
+
 == Data Architecture
 
 Blogs
