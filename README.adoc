@@ -70,6 +70,7 @@ Blogs
 * Grab, Enabling near real-time data analytics on the data lake
  (https://engineering.grab.com/enabling-near-realtime-data-analytics)
 * https://www.decodable.co/blog/taxonomy-of-data-change-events[A Taxonomy Of Data Change Events]
+* https://www.youtube.com/watch?v=h_pXIn3Jdak[Youtube, Real Time with Redpanda, Episode 4: Write path optimizations for tiered storage]
 
 == Data Storage
 Terms
@@ -81,11 +82,16 @@ Terms
   OCC (Optimistic Concurrency Control), MVCC (Multiversion Concurrency Control)
 )
 
-Blogs
+Blogs and Videos
 
 * https://turbopuffer.com/blog/turbopuffer[turbopuffer: fast search on object storage]
 * Uber
 ** https://www.uber.com/en-IN/blog/kafka-tiered-storage[Introduction to Kafka Tiered Storage at Uber]
+* Redpanda
+** https://docs.redpanda.com/current/manage/tiered-storage/[Redpanda Tiered Storage]
+** https://www.redpanda.com/blog/tiered-storage-architecture-shadow-indexing-deep-dive[How we built Shadow Indexing to supercharge storage and data streaming]
+* Substrate
+** https://www.youtube.com/watch?v=9S8rmW8LD5o[Youtube, Deep Dive - Substrate Storage - Shawn Tabrizi]
 
 RFCs
 
@@ -95,13 +101,13 @@ RFCs
 
 Blogs
 
-* Traveloka - Data Lake API on Microservice Architecture using BigQuery (https://medium.com/traveloka-engineering/data-lake-api-on-microservice-architecture-using-bigquery-10d6e9c5ca8f).
-  Best Practices: avoid giving direct access to data platform storage (object storage, database, etc.) as
-  it creates a tight coupling to the underlying technology, format, etc. Instead, have an API
-  layer in between to decouple that dependency. What's bad about direct access?
-    change coordination required between teams.
-    lack of access control (column, row levels).
-    lack of audit log (who access, download what).
+* https://medium.com/traveloka-engineering/data-lake-api-on-microservice-architecture-using-bigquery-10d6e9c5ca8f[Traveloka - Data Lake API on Microservice Architecture using BigQuery].
+** Best Practices? avoid giving direct access to data platform storage (object storage, database, etc.) as it creates a tight coupling to the underlying technology, format, etc. Instead, have an API
+  layer in between to decouple that dependency.
+** What's bad about direct access?
+*** change coordination required between teams.
+*** lack of access control (column, row levels).
+*** lack of audit log (who access, download what).
 * Building Criteo API, What We’ve Learned
  (https://medium.com/criteo-engineering/building-criteo-api-what-weve-learned-b7f3e7b8d270). Key lessons learned after building a new API ecosystem from scratch.
 * Idempotency Keys: How PayPal and Stripe Prevent Duplicate Payment(https://medium.com/@sahintalha1/the-way-psps-such-as-paypal-stripe-and-adyen-prevent-duplicate-payment-idempotency-keys-615845c185bf)
