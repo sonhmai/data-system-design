@@ -50,6 +50,8 @@ Performance
 * https://www.cs.cmu.edu/~harchol/Papers/EuroSys20.pdf[Google, Borg: the next generation]
 * https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf[Google File System]
 * https://www.usenix.org/legacy/event/atc10/tech/full_papers/Hunt.pdf[ZooKeeper: Wait-free coordination for Internet-scale systems]
+* https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf[Dynamo: Amazon’s Highly Available Key-value Store]
+** https://www.youtube.com/watch?v=hMt9yFp0JKM[Video, Christopher Batey - DYNAMO: the paper that changed the database world]
 * An Empirical Evaluation of Columnar Storage Formats
 * Froid: Optimization of Imperative Programs in a Relational Database (K. Ramachandra, et al., VLDB 2017)
 * Don't Hold My Data Hostage: A Case for Client Protocol Redesign (M. Raasveldt, et al., VLDB 2017)
