@@ -108,6 +108,8 @@ Blogs and Videos
 ** https://www.redpanda.com/blog/tiered-storage-architecture-shadow-indexing-deep-dive[How we built Shadow Indexing to supercharge storage and data streaming]
 * Substrate
 ** https://www.youtube.com/watch?v=9S8rmW8LD5o[Youtube, Deep Dive - Substrate Storage - Shawn Tabrizi]
+* AWS
+** https://www.allthingsdistributed.com/2024/08/continuous-reinvention-a-brief-history-of-block-storage-at-aws.html[Continuous reinvention: A brief history of block storage at AWS]
 
 RFCs
 
