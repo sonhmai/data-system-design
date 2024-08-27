@@ -86,6 +86,9 @@ Blogs
 * Grab, Enabling near real-time data analytics on the data lake
  (https://engineering.grab.com/enabling-near-realtime-data-analytics)
 * https://www.decodable.co/blog/taxonomy-of-data-change-events[A Taxonomy Of Data Change Events]
+* https://materialize.com/blog/operational-data-store/[What Happened to the Operational Data Store?]
+
+Videos
 * https://www.youtube.com/watch?v=h_pXIn3Jdak[Youtube, Real Time with Redpanda, Episode 4: Write path optimizations for tiered storage]
 
 == Data Storage
