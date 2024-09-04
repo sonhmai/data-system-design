@@ -35,6 +35,8 @@ toc::[]
 * https://discord.com/blog/why-discord-is-switching-from-go-to-rust[Why Discord is switching from Go to Rust], interesting discussions on https://www.reddit.com/r/golang/comments/eywx4q/why_discord_is_switching_from_go_to_rust/[ Reddit thread], https://news.ycombinator.com/item?id=26227339[Hackernews].
 * https://encore.dev/blog/queueing[Queueing: an interactive study of queueing strategies]
 * https://muratbuffalo.blogspot.com/2024/07/understanding-performance-implications.html[Understanding the Performance Implications of Storage-Disaggregated Databases]
+* https://www.somethingsimilar.com/2013/01/14/notes-on-distributed-systems-for-young-bloods/[Notes on Distributed Systems for Young Bloods]
+* https://arnon.me/[Arnon blog]
 
 Replication
 
@@ -360,3 +362,4 @@ Papers
 == Databases
 
 * https://transactional.blog/blog/2024-database-startups[2024 Database startups]
+* https://artem.krylysov.com/blog/2023/04/19/how-rocksdb-works/[How Rocksdb Works]
