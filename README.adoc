@@ -362,4 +362,9 @@ Papers
 == Databases
 
 * https://transactional.blog/blog/2024-database-startups[2024 Database startups]
+
+=== LSM Tree Storage Engine
+
 * https://artem.krylysov.com/blog/2023/04/19/how-rocksdb-works/[How Rocksdb Works]
+* https://www.youtube.com/watch?v=23OmqULDld0[SREcon22 - Dissecting the Humble LSM Tree and SSTable]. In this talk on YouTube, we will start from the ground up, describing what the LSM data structure is and implementing it using code. We'll then talk about the operational characteristics and how they are used in practice for high performance applications that need to store data.
+* https://www.youtube.com/watch?v=32LMicc0gRA[Redesigning OLTP for a New Order of Magnitude]. A InfoQ talk where Joran Greef discusses TigerBeetle, a new database, and why OLTP has a growing impedance mismatch, why the OLTP workload is becoming more contentious, why row locks, why storage faults, write stalls, and why non-determinism is now a problem.
