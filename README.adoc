@@ -66,7 +66,7 @@ Performance
 * Amazon Redshift Re-Invented (N. Armenatzoglou, et al., SIGMOD 2022)
 * https://dl.acm.org/doi/10.1145/3654983[Understanding the Performance Implications of the Design Principles in Storage-Disaggregated Databases]
 * SparkFuzz - searching correctness regressions in modern query engines
-* Why Events Are A Bad Idea (for high-concurrency servers)
+* link:Papers/why_events_are_a_bad_idea.pdf[Why Events Are A Bad Idea (for high-concurrency servers)]
 
 === Video Courses
 
@@ -334,31 +334,19 @@ Delta Lake
 
 Governance
 
-* Implementing the GDPR 'Right to be Forgotten' in Delta Lake (https://www.databricks.com/blog/2022/03/23/implementing-the-gdpr-right-to-be-forgotten-in-delta-lake.html)
-  Approaches: 1-Data Amnesia, 2-Anonymization, 3-Pseudonymization/Normalized tables.
-  Speed up point DELETE by data skipping optimization with Z-order on DELETE where fields.
-
+* https://www.databricks.com/blog/2022/03/23/implementing-the-gdpr-right-to-be-forgotten-in-delta-lake.html[Implementing the GDPR 'Right to be Forgotten' in Delta Lake.] Approaches: 1-Data Amnesia, 2-Anonymization, 3-Pseudonymization/Normalized tables. Sped up point DELETE by data skipping optimization with Z-order on DELETE where fields.
 
 Backfilling
 
 * https://docs.databricks.com/en/ingestion/auto-loader/production.html=trigger-regular-backfills-using-cloudfilesbackfillinterval
 * https://community.databricks.com/t5/data-engineering/how-to-make-structured-streaming-with-autoloader-efficiently-and/td-p/47833
-* Autoloader start and end date for ingestion (https://community.databricks.com/t5/data-engineering/autoloader-start-and-end-date-for-ingestion/td-p/45523)
+* https://community.databricks.com/t5/data-engineering/autoloader-start-and-end-date-for-ingestion/td-p/45523[Autoloader start and end date for ingestion]
 
 == Performance
 
 Papers
 
-* https://www.usenix.org/conference/atc18/presentation/yang-stephen[NanoLog: A Nanosecond Scale Logging System]. https://github.com/sonhmai/NanoLog[github repo]
-** Implemented fast, low latency, high thruput C++ logging system.
-*** 10-100x faster than existing systems (Log4js, spdlog)
-*** maintains printf-like semantics
-*** 80M msg/sec at median latency of 8ns in microbenchmarks, 18ns in apps
-** How?
-*** shifting work out of the runtime hot path and into the compilation and post-execution phases of the application.
-*** deferring formatting to an offline process.
-** Benefit: allows detailed logs in low latency systems
-** costs: 512KB RAM per thread, one core, disk BW.
+* https://www.usenix.org/conference/atc18/presentation/yang-stephen[NanoLog: A Nanosecond Scale Logging System]. https://github.com/sonhmai/NanoLog[github repo]. Implementing a fast, low latency, high thruput C++ logging system by 1-shifting work out of the runtime hot path and into the compilation and post-execution phases of the application, 2-deferring formatting to an offline process.
 
 == Databases
 
