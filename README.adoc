@@ -66,6 +66,7 @@ Performance
 * Amazon Redshift Re-Invented (N. Armenatzoglou, et al., SIGMOD 2022)
 * https://dl.acm.org/doi/10.1145/3654983[Understanding the Performance Implications of the Design Principles in Storage-Disaggregated Databases]
 * SparkFuzz - searching correctness regressions in modern query engines
+* Why Events Are A Bad Idea (for high-concurrency servers)
 
 === Video Courses
 
