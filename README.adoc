@@ -46,6 +46,10 @@ Performance
 
 * https://tigerbeetle.com/blog/a-friendly-abstraction-over-iouring-and-kqueue[A Programmer-Friendly I/O Abstraction Over io_uring and kqueue]
 
+CAP
+
+* https://www.youtube.com/watch?v=srOgpXECblk[Google I/O 2009 - Transactions Across Datacenters]: distributed systems, transactions, fault-tolerance, consistency, replication, sharding, two phase commit, consensus protocol with App Engine datastore use case.
+
 === Papers
 (also available in Papers folder)
 
@@ -72,15 +76,6 @@ Performance
 
 * https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB[Distributed Systems Lecture Series by Martin Kleppmann]
 * https://www.youtube.com/watch?v=cQP8WApzIQQ&list=PLrw6a1wE39_tb2fErI4-WkMbsvGQk9_UB[MIT 6.824: Distributed Systems Course, 2020.]
-
-=== Learning Goals
-
-
- can describe following terms
-- state machine replication within a shard
-- two-phase locking for serializable transaction isolation
-- two-phase commit for cross-shard atomicity
-
 
 == Data Architecture
 
